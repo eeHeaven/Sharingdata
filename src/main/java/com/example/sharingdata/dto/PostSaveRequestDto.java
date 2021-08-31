@@ -18,8 +18,8 @@ public class PostSaveRequestDto {
 
     private String title;
     private String context;
-    private Timestamp timestamp;
     private Member author;
+
 
     @Builder
     public PostSaveRequestDto(String title, String context,Member author){

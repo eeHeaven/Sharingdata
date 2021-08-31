@@ -1,4 +1,8 @@
-package com.example.sharingdata.domain;
+package com.example.sharingdata.domain.comment;
+
+import com.example.sharingdata.domain.member.Member;
+import com.example.sharingdata.domain.report;
+import com.example.sharingdata.domain.sharePoint;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

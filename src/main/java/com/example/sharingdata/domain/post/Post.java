@@ -6,23 +6,21 @@ import com.example.sharingdata.domain.hashTag;
 import com.example.sharingdata.domain.image;
 import com.example.sharingdata.domain.report;
 import com.example.sharingdata.domain.sharePoint;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
 
-@Entity
-@NoArgsConstructor
+
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Setter
+@Entity
+@Table(name="POST")
 public class Post extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long postId;
 
     @Column(length = 500, nullable = false)
@@ -32,7 +30,7 @@ public class Post extends BaseTimeEntity {
     private String context;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Member author;
 
     @Builder

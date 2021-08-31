@@ -1,5 +1,6 @@
-package com.example.sharingdata.domain.post;
+package com.example.sharingdata.service;
 
+import com.example.sharingdata.domain.post.PostRepository;
 import com.example.sharingdata.dto.PostMainResponseDto;
 import com.example.sharingdata.dto.PostSaveRequestDto;
 import lombok.AllArgsConstructor;

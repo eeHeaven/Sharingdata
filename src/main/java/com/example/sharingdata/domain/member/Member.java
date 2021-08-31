@@ -6,47 +6,34 @@ import com.example.sharingdata.domain.report;
 import com.example.sharingdata.domain.sharePoint;
 import com.example.sharingdata.domain.shareRank;
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Member {
 
     @Id
-    private String memberID;
-
-    @NotNull
-    private String email;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long memberID;
 
     @NotNull
     private String nickname;
 
-    @NotNull
-    private String password;
-
-    private boolean isBlocked;
 
     @OneToMany
     private List<Post> posts;
 
-    @OneToMany
-    private List<comment> comments;
+    @Builder
+    public Member(String nickname, List<Post> posts){
+        this.nickname = nickname;
+        this.posts = posts;
+    }
 
-    @OneToMany
-    private List<report> reports;
-
-    @OneToOne
-    private shareRank rank;
-
-    @OneToOne
-    private sharePoint point;
 
 
 }

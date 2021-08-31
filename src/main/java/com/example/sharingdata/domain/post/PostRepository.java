@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.stream.Stream;
 
-@Repository
 public interface PostRepository extends JpaRepository<Post,Long> {
 
     @Query("SELECT p " +
