@@ -1,0 +1,1 @@
+insert into post (title, context) values ('테스트1', '테스트2');

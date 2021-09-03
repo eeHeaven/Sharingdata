@@ -1,6 +1,6 @@
 package com.example.sharingdata.domain.member;
 
-import com.example.sharingdata.domain.comment;
+import com.example.sharingdata.domain.comment.comment;
 import com.example.sharingdata.domain.post.Post;
 import com.example.sharingdata.domain.report;
 import com.example.sharingdata.domain.sharePoint;
